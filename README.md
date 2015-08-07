@@ -114,7 +114,7 @@ This is the same as creating a page except
 
 ## Order of compiling (for your reference)
 
-Step 1 - compile all html without order from
+Step 1 - Grunt compiles all html without order from
 
     public/views-special/**/*.html
     public/views-pages/**/*.html
@@ -124,7 +124,7 @@ into a javascript file here
     public/htmlcompiled/partials.js
 
 
-Step 2 - compile all javascript in order from
+Step 2 - Grunt compiles all javascript in order from
 
     public/js/router/prefix*.js  
     public/js/lib/jquery*.js
@@ -147,7 +147,7 @@ to
 
     public/prod/start.js
 
-Step 3 - compile all css in order from
+Step 3 - Grunt compiles all css in order from
 
     public/views-special/**/structure.css
     public/views-special/**/*.css

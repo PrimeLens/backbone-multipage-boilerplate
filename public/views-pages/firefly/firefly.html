@@ -1,0 +1,28 @@
+<div id="fireflypage">
+
+    <img class="mainpic" src="randomDirectory/images/fireflypage/firefly-cast.jpg">
+
+    <p>This page is an example of event driven architecture.</p>
+
+    <p>Click on an item below and it will move to the other container. An item will either take on text form or
+    image form depending upon which container it is in. Each container is controlled by a separate and different nested view.
+    Each of the views remembers its state in case you navigate away to another page.</p>
+
+    <p> When an item is clicked the view takes care of itself, removing the item from its model,
+     sending the event to Grand Central and finally rerendering according to the models new content.</p>
+
+    <p>You'll notice that in the code definition this.render() does not exist, also $el does not exist until
+        its assigned during runtime. This is to show you that during instanciation,
+        <span class="codestyle">initialize()</span> is the only method required by the Backbone framework.
+    </p>
+
+    <p>The last thing to note is that the code for these views is not stored in <span class="codestyle">/views-special</span>
+    I chose to do this because its not instanciated on different pages.  Instead each view is instanciated once and is specific
+    to the FireFly page experience.  Therefore it makes sense to store the javascript in <span class="codestyle">/firefly</span>
+    along with the main file. Also JS filenames don't make a difference and are ignored at compile time, I could have put all three views
+        in the one JS file and it would be the same.</p>
+
+    <div class="container one"></div>
+    <div class="container two"></div>
+
+</div>

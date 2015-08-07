@@ -1,0 +1,26 @@
+
+
+.quizheader {
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 30px;
+}
+.quizheader .leftGraphic {  }
+.quizheader .rightGraphic {  }
+
+.quizitem {
+    font-size: 12px;
+    color: #888;
+    margin: 10px 0;
+}
+
+
+.resetquizbtn,
+.submitquizbtn {
+    font-size: 12px;
+    color: #888;
+    text-decoration: underline;
+    margin: 20px 20px 40px 0;
+    float: left;
+}

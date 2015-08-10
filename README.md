@@ -75,7 +75,7 @@ They can also add libs, components and config files under `/public/js` however i
  4. Create the folder `/public/views-pages/about` and create `about html` and `about.css` inside it
  5. Create `aboutview.js` in that folder using the following pattern
 
-*code note: the word 'about' appears twice in code and three times in comments*
+*code note: the word 'about' appears twice in code and in three console logs*
 
      var AboutView = Backbone.View.extend({
          el : '#pagecontainer',

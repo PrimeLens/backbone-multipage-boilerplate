@@ -1,5 +1,5 @@
 
-/**** COMPILED 2015-08-06 ****/
+/**** COMPILED 2015-09-04 ****/
 
 /* public/js/lib/jquery-1.11.1.min.js */
 /*! jQuery v1.11.1 | (c) 2005, 2014 jQuery Foundation, Inc. | jquery.org/license */
@@ -686,17 +686,19 @@ this.$el.find('.panel').html('<p>Click a button above to see a character. Watch 
 });
 /* public/js/router/grandcentral.js */
 var grandCentral = _.extend({}, Backbone.Events);
-/* public/js/router/router_base_v2.1.js */
+/* public/js/router/router_base_v2.2.js */
 var routerSetupConfig = {
 status : {
 currentPage : '',
 lastPage : '',
 currentRoute : '',
 currentFragsArray : [],
-currentQueryString : ''
+currentQueryString : '',
+currentQueryStringArray : []
 
 },
 routeTunnel: function(currentPage, view, f, q){
+var self = this;
 if ( currentPage == 'home' && f && !q ) { q = f; f= null; }
 var pageChanged = false;
 if ( this.status.currentPage != currentPage ) {
@@ -707,6 +709,13 @@ this.status.currentPage = currentPage;
 this.status.currentRoute = Backbone.history.fragment;
 this.status.currentFragsArray = f ? f.split('/') : [];
 this.status.currentQueryString = q;
+this.status.currentQueryStringArray = (typeof q ==='string') ? q.split('?') : [];
+this.status.currentQueryStringArray = _.filter(this.status.currentQueryStringArray, function(v){ return v.indexOf('=') > -1; });
+_.each(this.status.currentQueryStringArray, function(v,i){
+if (v.indexOf('=') > -1) {
+self.status.currentQueryStringArray[i] = JSON.parse('{"' + v.replace('=', '":"') + '"}');
+}
+}); 
 if (pageChanged) { console.log('\n-- new route (new page)'); } else { console.log('\n-- new route (hashchange only)'); }
 console.log('app.status.currentPage='+this.status.currentPage +
 '\napp.status.lastPage='+this.status.lastPage +

@@ -32,7 +32,7 @@ var routerSetupConfig = {
         this.status.currentFragsArray =  f ? f.split('/') : [];
         this.status.currentQueryString = q;
         /*  convert query string to Array of objects  */
-        this.status.currentQueryStringArray = (typeof q ==='string') ? q.split('?') : [];
+        this.status.currentQueryStringArray = (typeof q ==='string') ? q.split('&') : [];
         // filter out any arg that does not contain an '='
         this.status.currentQueryStringArray = _.filter(this.status.currentQueryStringArray, function(v){ return v.indexOf('=') > -1; });
         // convert to object

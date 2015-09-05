@@ -1,5 +1,5 @@
 
-/**** COMPILED 2015-09-04 ****/
+/**** COMPILED 2015-09-05 ****/
 
 /* public/js/lib/jquery-1.11.1.min.js */
 /*! jQuery v1.11.1 | (c) 2005, 2014 jQuery Foundation, Inc. | jquery.org/license */
@@ -709,7 +709,7 @@ this.status.currentPage = currentPage;
 this.status.currentRoute = Backbone.history.fragment;
 this.status.currentFragsArray = f ? f.split('/') : [];
 this.status.currentQueryString = q;
-this.status.currentQueryStringArray = (typeof q ==='string') ? q.split('?') : [];
+this.status.currentQueryStringArray = (typeof q ==='string') ? q.split('&') : [];
 this.status.currentQueryStringArray = _.filter(this.status.currentQueryStringArray, function(v){ return v.indexOf('=') > -1; });
 _.each(this.status.currentQueryStringArray, function(v,i){
 if (v.indexOf('=') > -1) {
